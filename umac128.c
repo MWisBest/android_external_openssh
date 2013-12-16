@@ -240,7 +240,7 @@ static void pdf_init(pdf_ctx *pc, aes_int_key prf_key)
     aes_encryption(pc->nonce, pc->cache, pc->prf_key);
 }
 
-static void __attribute__((optimize("no-strict-aliasing"))) pdf_gen_xor(pdf_ctx *pc, const UINT8 nonce[8], UINT8 buf[8])
+static void pdf_gen_xor(pdf_ctx *pc, const UINT8 nonce[8], UINT8 buf[8])
 {
     /* 'ndx' indicates that we'll be using the 0th or 1st eight bytes
      * of the AES output. If last time around we returned the ndx-1st
